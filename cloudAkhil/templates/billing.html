@@ -8,14 +8,21 @@
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js" integrity="sha384-geWF76RCwLtnZ8qwWowPQNguL3RmwHVBC9FhGdlKrxdiJJigb/j/68SIy3Te4Bkz" crossorigin="anonymous"></script>
 </head>
 <body>
-    <ul class="mt-5">
+   <div class="mt-5 container">
         {% if result %}
-        {% for user, file in result.items() %}
-            <li style="font-size: 20px; font-family:Arial, Helvetica, sans-serif; font-weight:bold">File Name: {{ user }}   ->    User Id:   {{ file }}</li>
-        {% endfor %}
+            {% for file, user in result.items() %}
+                <label> File <b>{{ file }} </b> is uploaded by:  <b> {{ user }} </b> </label><br>
+                <hr>
+            {% endfor %}
         {% else %}
-        <li>No Files have been uploaded</li>
-        {% endif %}
-    </ul>  
+            <p>No files have been uploaded</p>
+        {% endif %} 
+        <div>
+            <a href="/signin"><button type="button" class="btn btn-primary">Click Here to go back to Login Page</button></a>
+            </div>
+   </div>
+   
+        
+
 </body>
 </html>
